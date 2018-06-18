@@ -174,14 +174,6 @@ bool Grafo::grafoNulo()
     }
 }
 
-void Grafo::printSequenciaGraus()
-{
-    for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it) {
-            cout << it->getGrau() << " ";
-    }
-    cout <<""<<endl;
-}
-
 int Grafo::getGrauNo(int id)
 {
     for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it) {
@@ -191,87 +183,8 @@ int Grafo::getGrauNo(int id)
     return -1;
 }
 
-bool Grafo::grafoEKRegular(int k)
-{
-    for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it) {
-                if(it->getGrau()!=k)
-                    return false;
-    }
-    return true;
-}
-
-void Grafo::mostrarVizinhacaAberta(int id)
-{
-    int i=0;
-    for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it, i++) {
-         if( it->getID() == id ) // vai na lista de adjacência do nó
-         {
-            for(std::vector<Aresta>::iterator a = listaNos[i].listaAresta.begin(); a != listaNos[i].listaAresta.end(); ++a)
-                cout << a->getIDNo() << endl;
-         }
-         // Percorre as outras arestas para saber os outros vizinhos do no procurado
-    }
-}
-
-void Grafo::mostrarVizinhacaFechada(int id)
-{
-    int i=0;
-    cout << id << endl;
-    for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it, i++) {
-         if( it->getID() == id )
-         {
-            for(std::vector<Aresta>::iterator a = listaNos[i].listaAresta.begin(); a != listaNos[i].listaAresta.end(); ++a)
-                cout << a->getIDNo() << endl;
-         }
-    }
-
-
-}
-
-bool Grafo::multigrafo()
-{
-    // verifica se o grafo é um multigrafo;
-
-    int ord = getOrdemGrafo();
-    int grau, id, idviz;
-    No no = No();
-    Aresta t = Aresta();
-
-    for(int i = 0; i < ord; i++) {
-        no = listaNos[i];
-        id = no.getID();
-        grau = no.getGrau();
-        int *A = new int[grau];
-        for(int j = 0; j < grau; j++) { // Para cada nó, analisar todas as arestas;
-            t = no.listaAresta[j];
-            if(t.getArco()) // Se alguma aresta for arco,
-                return false; // tem aresta direcionada
-            idviz = t.getIDNo();
-            if(idviz == id) // Se alguma aresta tiver id igual ao do no em questão,
-                return false; // é self-loop
-            for(int k = j-1; k >= 0; k--) {
-                if(A[k] == idviz) {
-                    // Se o vetor A tem elementos repetidos,
-                    // existe mais de uma aresta ligando os mesmos nós (multiarestas);
-                    return true; // tem multiaresta
-                }
-            }
-            // Se não, fazer o mesmo para o próximo nó da lista;
-            A[j] = idviz; // Armazena os ids das arestas em um vetor A;
-        }
-        delete A;
-    }
-    // Ao final da lista, se todos os nós forem verificados,
-    // siginifica que não existem multiarestas. O grafo não é
-    // multigrafo.
-    return false;
-}
-
 bool Grafo::grafoCompleto()
 {
-    if(multigrafo())
-        return false;
-
     int N = getOrdemGrafo();
     int num_arestas = 0;
     for(int i = 0; i < N; i++) {
@@ -330,66 +243,5 @@ bool Grafo::vizinho(int id1, int id2)
     return false;
 }
 
-bool Grafo::tenta2ColorirGrafo(int id, int colorArr[] ){
-    colorArr[id] = 1;
-
-    //cria uma fila para realizar a bsuca em largura
-    queue <int> q;
-    q.push(id);
-
-
-    while (!q.empty())
-    {
-        //tira o primeiro elemento da fila
-        int u = q.front();
-        q.pop();
-
-        // Return false if there is a self-loop
-
-        if (vizinho(u,u))
-           return false;
-
-         // Find all non-colored adjacent vertices
-        for (int v = 1; v <= listaNos.size(); ++v)
-        {
-            // Se u e v são vizinhos e
-            // o n[o v não está colorido
-            if(vizinho(u,v) && colorArr[v] == -1)
-            {
-                // Assign alternate color to this
-                // adjacent v of u
-                colorArr[v] = 1 - colorArr[u];
-                q.push(v);
-            }
-
-            // Se u e v são vizinhos e
-            // o no v  está colorido com a mesma coir de u
-            else if(vizinho(u,v) && colorArr[v] == colorArr[u])
-                return false;
-        }
-    }
-
-
-    return true;
-
-}
-
-bool Grafo::bipartido()
-{
-    int V = listaNos.size();
-    int colorArr[V+1];
-    for (int i = 1; i <= V; ++i)
-        colorArr[i] = -1;
-
-    // O loop a seguir fara a busca em largura para verificar a bipartilidade
-    // o Algoritmo tenta colorir o grafo com 2 cores, se conseguir o grafo é bipartido.
-    for (int i = 1; i <= V; i++)
-      if (colorArr[i] == -1)
-        if (tenta2ColorirGrafo(i, colorArr) == false)
-           return false;
-
-     return true;
-
-}
 
 
