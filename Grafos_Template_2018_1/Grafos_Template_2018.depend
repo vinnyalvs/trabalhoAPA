@@ -1,0 +1,242 @@
+# depslib dependency file v1.0
+1524838540 source:/home/arnaldo/Downloads/Grafos_Template_2018_1/main.cpp
+	<vector>
+	<iostream>
+	"headers/Aresta.h"
+	"headers/Grafo.h"
+	"headers/No.h"
+	"headers/Menu.h"
+
+1522632900 /home/arnaldo/Downloads/Grafos_Template_2018_1/headers/Aresta.h
+
+1522632926 /home/arnaldo/Downloads/Grafos_Template_2018_1/headers/Grafo.h
+	"No.h"
+
+1522689272 /home/arnaldo/Downloads/Grafos_Template_2018_1/headers/No.h
+	"Aresta.h"
+
+1524839059 /home/arnaldo/Downloads/Grafos_Template_2018_1/headers/Menu.h
+	<string>
+
+1524839156 source:/home/arnaldo/Downloads/Grafos_Template_2018_1/src/Menu.cpp
+	"../headers/Menu.h"
+	<string>
+	<iostream>
+
+1524840550 source:/home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/main.cpp
+	"headers/bibliotecas.h"
+
+1522632900 /home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/Aresta.h
+
+1524842764 /home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/Grafo.h
+	"bibliotecas.h"
+
+1522689272 /home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/No.h
+	"Aresta.h"
+
+1524842185 /home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/Menu.h
+	"bibliotecas.h"
+
+1524840701 source:/home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/Menu.cpp
+	"../headers/bibliotecas.h"
+
+1524842308 /home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+	"Menu.h"
+
+1524840282 source:/home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/Aresta.cpp
+
+1524840303 source:/home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/Grafo.cpp
+
+1524840325 source:/home/arnaldo/trabalhoGrafos/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/No.cpp
+
+1527171690 source:c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1527171690 c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+	"Menu.h"
+
+1527258531 c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\headers\aresta.h
+
+1527258247 c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1527257281 c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1527171690 c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\headers\menu.h
+	"bibliotecas.h"
+
+1527171691 source:c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\src\no.cpp
+
+1527256605 source:c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1527171691 source:c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\src\grafo.cpp
+
+1527171691 source:c:\users\getcomp01\documents\trabalhografosgrupo11\grafos_template_2018_1\src\menu.cpp
+	"../headers/bibliotecas.h"
+
+1528461988 source:c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1528457941 c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+	"Menu.h"
+
+1528457941 c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\headers\aresta.h
+
+1528457941 c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1528461387 c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1528459398 c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\headers\menu.h
+	"bibliotecas.h"
+
+1528462178 source:c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\src\menu.cpp
+	"../headers/bibliotecas.h"
+
+1528457942 source:c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1528461394 source:c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\src\grafo.cpp
+	"../headers/bibliotecas.h"
+	<vector>
+
+1528457943 source:c:\users\mthal\desktop\matheus\quinto período\grafos\trabalhografosgrupo11\grafos_template_2018_1\src\no.cpp
+	"../headers/bibliotecas.h"
+
+1528154380 source:c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1528145005 c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+	"Menu.h"
+
+1528156157 c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\aresta.h
+
+1528158823 c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1528160058 c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1528140345 c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\menu.h
+	"bibliotecas.h"
+
+1528156167 source:c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1528140345 source:c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\menu.cpp
+	"../headers/bibliotecas.h"
+
+1528161845 source:c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\no.cpp
+	"../headers/bibliotecas.h"
+
+1528161819 source:c:\users\vinic\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\grafo.cpp
+	"../headers/bibliotecas.h"
+	<vector>
+
+1528492096 source:c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1528491051 c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	<locale>
+	<queue>
+	<algorithm>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+	"Menu.h"
+
+1528427531 c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\aresta.h
+
+1528493596 c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1528493268 c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1528462986 c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\headers\menu.h
+	"bibliotecas.h"
+
+1528427531 source:c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1528493476 source:c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\grafo.cpp
+	"../headers/bibliotecas.h"
+	<vector>
+
+1528493585 source:c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\menu.cpp
+	"../headers/bibliotecas.h"
+
+1528493589 source:c:\users\hal\documents\github\trabalhografosgrupo11\grafos_template_2018_1\src\no.cpp
+	"../headers/bibliotecas.h"
+
+1528374382 source:/home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/main.cpp
+	"headers/bibliotecas.h"
+
+1528374382 /home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+	"Menu.h"
+
+1528425582 /home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/Aresta.h
+
+1528374382 /home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/No.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1528420979 /home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/Grafo.h
+	"bibliotecas.h"
+
+1528374284 /home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/headers/Menu.h
+	"bibliotecas.h"
+
+1528425595 source:/home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/Aresta.cpp
+	"../headers/bibliotecas.h"
+
+1528374382 source:/home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/Menu.cpp
+	"../headers/bibliotecas.h"
+
+1528374382 source:/home/josecarvalho/git_workspace/TrabalhoGrafosGrupo11/Grafos_Template_2018_1/src/No.cpp
+	"../headers/bibliotecas.h"
+
