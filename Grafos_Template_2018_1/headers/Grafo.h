@@ -13,7 +13,7 @@ class Grafo{
         bool orderAux(const No& a, const No& b);
         void adcionarNo(int  id,float pesoNo);
         void removerNo(int id);
-        void readFile(char **path);
+        void readFile(string path);
         void writeFile(string path);
         void showInfo();
         bool noEstaNoGrafo(int index);
@@ -25,6 +25,7 @@ class Grafo{
         bool grafoCompleto();
         void removeAresta(int id1, int id2);
         void adicionaAresta(int id1,int id2, float peso);
+        void acharCliqueMaxima();
 };
 
 

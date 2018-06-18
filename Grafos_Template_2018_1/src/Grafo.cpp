@@ -92,15 +92,14 @@ bool Grafo::noEstaNoGrafo(int index)
 }
 
 
-void Grafo::readFile(char **path)
+void Grafo::readFile(string path)
 {
 	int m;
-	listaNos.reserve(m);
 	int count = 0;
 	ifstream f;
 	int id=0;
 	int id_destino;
-	f.open(path[1]);
+	f.open(path.c_str());
 	if (f.is_open()) {
 		f >> m;
 		while (true) {
@@ -139,7 +138,6 @@ void Grafo::readFile(char **path)
 		}
             cout << "Arquivo lido com sucesso" << endl;
 
-
     }
 	else {
 		cerr << "Couldn't open file!" << endl;
@@ -149,7 +147,26 @@ void Grafo::readFile(char **path)
 
 
 
+void Grafo::acharCliqueMaxima()
+{
+    sort(listaNos.begin(),listaNos.end()); // Ordena nós pelo grau com base no operator < definido em No.h
+    vector <No> nosNaSolucao;
+    nosNaSolucao.push_back(*listaNos.begin());
+    for(vector <No>::iterator it = (listaNos.begin() + 1); it != listaNos.end() ; it++ ){
+        bool e_vizinho = true;
+        for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
+            if(!vizinho(it->getID(),n->getID())){
+                e_vizinho = false;
+                break;
+            }
+            if(e_vizinho){
+                nosNaSolucao.push_back(*it);
+            }
+        }
+    for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
+        cout << n->getID() << endl;
 
+}
 
 
 int Grafo::getOrdemGrafo()

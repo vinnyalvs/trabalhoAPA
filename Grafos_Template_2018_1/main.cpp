@@ -2,10 +2,12 @@
 
 
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     Grafo grafo = Grafo();
-    grafo.readFile(argv);
+    grafo.readFile("entrada.txt");
+    grafo.acharCliqueMaxima();
+        //grafo.showInfo();
     return 0;
 }
 
