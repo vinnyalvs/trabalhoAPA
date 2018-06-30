@@ -260,5 +260,28 @@ bool Grafo::vizinho(int id1, int id2)
     return false;
 }
 
+/*
+Reduzir para sat:
+k = numero de vertices da clique
+n = numero de nos
+for i = 1 ate k
+    cria clausula
+    for j = 1 ate n
+        cria um literal Vij
+    fecha clausula
+for j = 1 ate n
+    for i = 1 ate k
+        for x = i+1 ate k
+            cria uma clausula com dois literais ~Vij e ~Vxj
+            fecha clausula
+for j = 1 ate n
+    for z = j ate n
+        if z nao for vizinho de j
+            for i = 1 ate k
+                for x = i+1 ate k
+                cria uma clausula com dois literais ~Vij e ~Vxz
+                fecha clausula
+ esse seria as tres formas de gerar clausula agora so temos que decidir qual Sat solver a gente vai usar para saber que tipo de entrada ele aceita para podermos caracterizar mais as partes de criar clausula e literal
 
+*/
 
