@@ -26,6 +26,7 @@ class Grafo{
         void removeAresta(int id1, int id2);
         void adicionaAresta(int id1,int id2, float peso);
         void acharCliqueMaxima();
+        void reduzSat(int k);
 };
 
 
