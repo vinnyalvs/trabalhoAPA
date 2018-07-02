@@ -340,7 +340,6 @@ bool Grafo::vizinho(int id1, int id2)
 
 
 }
-
 /*
 Reduzir para sat:
 k = numero de vertices da clique
@@ -365,4 +364,36 @@ for j = 1 ate n
  esse seria as tres formas de gerar clausula agora so temos que decidir qual Sat solver a gente vai usar para saber que tipo de entrada ele aceita para podermos caracterizar mais as partes de criar clausula e literal
 
 */
-
+void Grafo::reduzSat(int k)
+{
+int n = getOrdemGrafo();
+int i,j,x,z,numLiterais;
+int numClausulas = 0;
+numLiterais = n*k;
+for (i = 1;i <= k; i++)
+{
+    for (j = 1;j <= n; j++)
+        cout <<((i-1)*n)+j <<" ";
+    cout << "0" << endl;
+    numClausulas++;
+}
+for (j = 1;j <= n; j++)
+    for (i = 1;i <= k; i++)
+        for (x = i+1;x <= k;x++)
+        {
+            cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+j) << " 0" << endl;
+            numClausulas++;
+        }
+for (j = 1;j <= n; j++)
+    for (z = j+1;z <= n; z++)
+        if (!vizinho(j,z))
+            for (i = 1;i <= k; i++)
+                for (x = i+1;x <= k;x++)
+                {
+                    cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+z) << " 0" << endl;
+                    numClausulas++;
+                    cout << (-1)*(((x-1)*n)+j) << " " << (-1)*(((i-1)*n)+z) << " 0" << endl;
+                    numClausulas++;
+                }
+cout << numClausulas << " " << numLiterais;
+}

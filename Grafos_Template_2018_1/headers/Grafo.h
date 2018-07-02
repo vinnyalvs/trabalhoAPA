@@ -29,6 +29,7 @@ class Grafo{
         void acharCliqueMaxima();
         bool verificaSolucao(vector <No> nosNaSolucao);
         bool formaClique(vector<No>nosNaSolucao, No noCandidato);
+        void reduzSat(int k);
 };
 
 
