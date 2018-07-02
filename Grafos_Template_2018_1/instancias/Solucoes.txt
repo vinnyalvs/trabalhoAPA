@@ -1,0 +1,34 @@
+Keller6
+N Nos: 3361
+N Arestas: 4.619.898
+Solucao: 36
+Best Solution: 69
+Time: 532.784s
+
+p_hat1500-3
+N Nos: 1500
+N arestas: 847.244
+Solucao Encontrada: 75
+Best: 94
+Time: 50.862s
+
+brock200_2
+N Nos: 200
+N arestas: 9.876
+Solucao Encontrada: 7
+Best: 12
+Time: 0.342
+
+brock400b
+N Nos: 400
+N arestas: 59.765
+Solucao Encontrada: 18
+Best: 33
+Time: 1.535s
+
+phat300-1
+N nos: 300
+N arestas: 10.933
+Solucao Encontrada: 7
+Best: 8
+Time: 0.354s

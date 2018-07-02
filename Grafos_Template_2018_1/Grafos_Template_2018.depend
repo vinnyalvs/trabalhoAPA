@@ -308,3 +308,37 @@
 	"../headers/bibliotecas.h"
 	<vector>
 
+1530463928 source:c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1530463928 c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	<locale>
+	<queue>
+	<algorithm>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+
+1530463928 c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\headers\aresta.h
+
+1530463928 c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1530473875 c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1530473260 source:c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\src\no.cpp
+	"../headers/bibliotecas.h"
+
+1530482700 source:c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1530482000 source:c:\users\hal\documents\github\trabalhoapa\grafos_template_2018_1\src\grafo.cpp
+	"../headers/bibliotecas.h"
+	<vector>
+

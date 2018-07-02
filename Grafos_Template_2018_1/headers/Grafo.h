@@ -14,6 +14,7 @@ class Grafo{
         void adcionarNo(int  id,float pesoNo);
         void removerNo(int id);
         void readFile(string path);
+        void readFile2(string path);
         void writeFile(string path);
         void showInfo();
         bool noEstaNoGrafo(int index);
@@ -26,6 +27,8 @@ class Grafo{
         void removeAresta(int id1, int id2);
         void adicionaAresta(int id1,int id2, float peso);
         void acharCliqueMaxima();
+        bool verificaSolucao(vector <No> nosNaSolucao);
+        bool formaClique(vector<No>nosNaSolucao, No noCandidato);
 };
 
 

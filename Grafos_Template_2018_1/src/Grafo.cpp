@@ -46,9 +46,9 @@ void Grafo::showInfo(){
     int i=0;
     for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it) {
             cout << "No: " << it->getID() << endl;
-			for(std::vector<Aresta>::iterator a = listaNos[i].listaAresta.begin(); a != listaNos[i].listaAresta.end(); ++a){
+			/*for(std::vector<Aresta>::iterator a = listaNos[i].listaAresta.begin(); a != listaNos[i].listaAresta.end(); ++a){
                 cout << a->getIDNo() << endl;
-			}
+			}*/
 			i++;
 
     }
@@ -138,10 +138,68 @@ void Grafo::readFile(string path)
 		}
             cout << "Arquivo lido com sucesso" << endl;
 
+
+;
+
     }
 	else {
 		cerr << "Couldn't open file!" << endl;
 	}
+
+}
+
+
+void Grafo::readFile2(string path)
+{
+	int m,n;
+	int count = 0;
+	ifstream f;
+	int id=0;
+	int id_destino;
+	f.open(path.c_str());
+	if (f.is_open()) {
+		f >> m;
+		f >> n;
+		while (true) {
+			double value;
+			string aux;
+			if(count > 2)
+                count = 0;
+            if (count == 0) {
+                    if (!(f >> aux)) {
+                            break;
+                    }
+                }
+                else if (  count == 1) {
+                    if (!(f >> value)) {
+                            break;
+                    }
+                    id = value;
+                    if(!noEstaNoGrafo(id)){ // Nó está mo grafo?
+                        adcionarNo(id,0);
+                    }
+                }
+                else if(count == 2){
+                    if (!(f >> value)) {
+                            break;
+                    }
+                    id_destino = value;
+                    if(!noEstaNoGrafo(id_destino)){ // Nó está mo grafo?
+                        adcionarNo(id_destino,0);
+                    }
+                    for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it) {
+                            if( it->getID() == id )
+                                    it->adicionaAresta(id_destino,false,0);
+                            if( it->getID() == id_destino )
+                                    it->adicionaAresta(id,false,0);
+                    }
+                }
+				count++;
+		}
+		 cout << "Arquivo lido com sucesso" << endl;
+		} else {
+            cerr << "Couldn't open file!" << endl;
+        }
 
 }
 
@@ -153,21 +211,43 @@ void Grafo::acharCliqueMaxima()
     vector <No> nosNaSolucao;
     nosNaSolucao.push_back(*listaNos.begin());
     for(vector <No>::iterator it = (listaNos.begin() + 1); it != listaNos.end() ; it++ ){
-        bool e_vizinho = true;
-        for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
-            if(!vizinho(it->getID(),n->getID())){
-                e_vizinho = false;
-                break;
-            }
-            if(e_vizinho){
+            if(formaClique(nosNaSolucao,*it))
                 nosNaSolucao.push_back(*it);
-            }
-        }
-    for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
-        cout << n->getID() << endl;
+    }
+    /*for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
+        cout << n->getID() << endl; */
+    cout << "Tamanho da clique encontrada" << endl;
+    cout << nosNaSolucao.size() << endl;
+    /*cout << "-----------------" <<endl;
+    if(verificaSolucao(nosNaSolucao))
+        cout << "1" ;
+    else
+        cout << "0";*/
+
 
 }
 
+bool Grafo::formaClique(vector<No>nosNaSolucao, No noCandidato)
+{
+     for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
+            if(!vizinho(n->getID(),noCandidato.getID())){
+                return false;
+            }
+     return true;
+
+}
+
+bool Grafo::verificaSolucao(vector<No> nosNaSolucao)
+{
+    for (std::vector<No>::iterator it = nosNaSolucao.begin(); it != nosNaSolucao.end(); ++it){
+            for(std::vector<No>::iterator it2 = it+1; it2 != nosNaSolucao.end(); ++it2){
+                if(!vizinho(it->getID(),it2->getID())){
+                    return false;
+                }
+            }
+    }
+   return true;
+}
 
 int Grafo::getOrdemGrafo()
 {
@@ -257,7 +337,8 @@ bool Grafo::vizinho(int id1, int id2)
             return it->eVizinho(id1);
         }
     }
-    return false;
+
+
 }
 
 /*
