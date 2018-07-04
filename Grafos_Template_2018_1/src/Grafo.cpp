@@ -66,31 +66,19 @@ bool Grafo::noEstaNoGrafo(int index)
     return false;
 }
 
- void Grafo::writeFile(string path)
+ void Grafo::writeFile(string path, int nC, int nL)
 {
     ofstream f(path.c_str());
-    if(f.is_open()){
-        f << listaNos.size();
-        f << "\n";
-        for (std::vector<No>::iterator it = listaNos.begin(); it != listaNos.end(); ++it) {
-			for(std::vector<Aresta>::iterator a = it->listaAresta.begin(); a != it->listaAresta.end(); ++a){
-                f << it->getID();
-                f << " " ;
-                f << a->getIDNo();
-                f << " ";
-                f << a->getPesoAresta();
-                f << "\n";
-        }
-
+    if(f.is_open())
+    {
+        f << "p cnf " << nL << " " << nC;
 
     }
-    } else {
+    else
+    {
         cerr << "Couldn't open file!" << endl;
     }
-
-
 }
-
 
 void Grafo::readFile(string path)
 {
@@ -148,7 +136,6 @@ void Grafo::readFile(string path)
 
 }
 
-
 void Grafo::readFile2(string path)
 {
 	int m,n;
@@ -203,8 +190,6 @@ void Grafo::readFile2(string path)
 
 }
 
-
-
 void Grafo::acharCliqueMaxima()
 {
     sort(listaNos.begin(),listaNos.end()); // Ordena nós pelo grau com base no operator < definido em No.h
@@ -217,8 +202,6 @@ void Grafo::acharCliqueMaxima()
     cout << "Tamanho da clique encontrada" << endl;
     cout << nosNaSolucao.size() << endl;
 }
-
-
 
 int Grafo::cliqueMaximaForcaBruta(){
     int n = getOrdemGrafo();
@@ -322,8 +305,6 @@ bool Grafo::grafoCompleto()
     return false;
 }
 
-
-
 void Grafo::removeAresta(int id1,int id2)
 {
     if(noEstaNoGrafo(id1) && noEstaNoGrafo(id2)){
@@ -341,9 +322,6 @@ void Grafo::removeAresta(int id1,int id2)
     }
 
 }
-
-
-
 
 void Grafo::adicionaAresta(int id1, int id2, float peso)
 {
@@ -398,34 +376,36 @@ for j = 1 ate n
 */
 void Grafo::reduzSat(int k)
 {
-int n = getOrdemGrafo();
-int i,j,x,z,numLiterais;
-int numClausulas = 0;
-numLiterais = n*k;
-for (i = 1;i <= k; i++)
-{
-    for (j = 1;j <= n; j++)
-        cout <<((i-1)*n)+j <<" ";
-    cout << "0" << endl;
-    numClausulas++;
-}
-for (j = 1;j <= n; j++)
-    for (i = 1;i <= k; i++)
-        for (x = i+1;x <= k;x++)
-        {
-            cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+j) << " 0" << endl;
-            numClausulas++;
-        }
-for (j = 1;j <= n; j++)
-    for (z = j+1;z <= n; z++)
-        if (!vizinho(j,z))
-            for (i = 1;i <= k; i++)
-                for (x = i+1;x <= k;x++)
-                {
-                    cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+z) << " 0" << endl;
-                    numClausulas++;
-                    cout << (-1)*(((x-1)*n)+j) << " " << (-1)*(((i-1)*n)+z) << " 0" << endl;
-                    numClausulas++;
-                }
-cout << numClausulas << " " << numLiterais;
+    int n = getOrdemGrafo();
+    int i,j,x,z,numLiterais;
+    int numClausulas = 0;
+    numLiterais = n*k;
+    for (i = 1; i <= k; i++)
+    {
+        for (j = 1; j <= n; j++)
+            cout <<((i-1)*n)+j <<" ";
+        cout << "0" << endl;
+        numClausulas++;
+    }
+    for (j = 1; j <= n; j++)
+        for (i = 1; i <= k; i++)
+            for (x = i+1; x <= k; x++)
+            {
+                cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+j) << " 0" << endl;
+                numClausulas++;
+            }
+    for (j = 1; j <= n; j++)
+        for (z = j+1; z <= n; z++)
+            if (!vizinho(j,z))
+                for (i = 1; i <= k; i++)
+                    for (x = i+1; x <= k; x++)
+                    {
+                        cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+z) << " 0" << endl;
+                        numClausulas++;
+                        cout << (-1)*(((x-1)*n)+j) << " " << (-1)*(((i-1)*n)+z) << " 0" << endl;
+                        numClausulas++;
+                    }
+    cout << numClausulas << " " << numLiterais;
+    writeFile("saida.txt", numClausulas, numLiterais);
+
 }

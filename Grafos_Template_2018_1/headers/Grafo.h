@@ -15,7 +15,7 @@ class Grafo{
         void removerNo(int id);
         void readFile(string path);
         void readFile2(string path);
-        void writeFile(string path);
+        void writeFile(string path, int nC, int nL);
         void showInfo();
         bool noEstaNoGrafo(int index);
         int getOrdemGrafo();
