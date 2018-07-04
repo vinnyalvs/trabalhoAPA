@@ -226,7 +226,42 @@ void Grafo::acharCliqueMaxima()
 
 
 }
+/*
+    #include <algorithm>
+    n = getOrdemGrafo();
+    vector<int> vi;
+    vector<bool> v(n);
+    bool naoClique = false
+    for (int e = n; e > 1; e--)
+    {
+        v1.clear();
+        fill(v.begin(), v.begin() + e, true);
 
+        do {
+            for (int i = 0; i < n; ++i) {
+                if (v[i]) {
+                   v1.push_back (i+1);
+                }
+            }
+            for (int j = 1;j <= n; j++){
+                for (int z = j+1;z <= n; z++)
+                    if (!vizinho(j,z)){
+                        break;
+                        naoClique = true;
+                    }
+                if(naoClique){
+                    break;
+                }
+            }
+            if(!naoClique){
+                return e;
+            }
+            else
+                naoClique = false;
+        } while (prev_permutation(v.begin(), v.end()));
+    }
+    return 1;
+*/
 bool Grafo::formaClique(vector<No>nosNaSolucao, No noCandidato)
 {
      for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
