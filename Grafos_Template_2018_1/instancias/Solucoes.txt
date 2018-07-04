@@ -32,3 +32,9 @@ N arestas: 10.933
 Solucao Encontrada: 7
 Best: 8
 Time: 0.354s
+
+------------------------------------
+K25_d
+N nos: 25
+Solução encontrada 10
+Tempo: 77.371 s
