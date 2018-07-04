@@ -24,12 +24,14 @@ class Grafo{
         int getGrauNo(int id);
         bool vizinho(int id1, int id2);
         bool grafoCompleto();
+        No getNo(int id);
         void removeAresta(int id1, int id2);
         void adicionaAresta(int id1,int id2, float peso);
         void acharCliqueMaxima();
         bool verificaSolucao(vector <No> nosNaSolucao);
         bool formaClique(vector<No>nosNaSolucao, No noCandidato);
         void reduzSat(int k);
+        int cliqueMaximaForcaBruta();
 };
 
 

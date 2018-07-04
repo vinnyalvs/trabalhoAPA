@@ -214,45 +214,40 @@ void Grafo::acharCliqueMaxima()
             if(formaClique(nosNaSolucao,*it))
                 nosNaSolucao.push_back(*it);
     }
-    /*for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
-        cout << n->getID() << endl; */
     cout << "Tamanho da clique encontrada" << endl;
     cout << nosNaSolucao.size() << endl;
-    /*cout << "-----------------" <<endl;
-    if(verificaSolucao(nosNaSolucao))
-        cout << "1" ;
-    else
-        cout << "0";*/
-
-
 }
-/*
-    #include <algorithm>
-    n = getOrdemGrafo();
+
+
+
+int Grafo::cliqueMaximaForcaBruta(){
+    int n = getOrdemGrafo();
     vector<int> vi;
     vector<bool> v(n);
-    bool naoClique = false
+    bool naoClique = false; // se naoClique é falso é pq é Clique
     for (int e = n; e > 1; e--)
     {
-        v1.clear();
+        vi.clear();
+        fill(v.begin(), v.end(), false);
         fill(v.begin(), v.begin() + e, true);
-
         do {
+            vi.clear();
             for (int i = 0; i < n; ++i) {
                 if (v[i]) {
-                   v1.push_back (i+1);
+                   vi.push_back (i+1);
                 }
             }
-            for (int j = 1;j <= n; j++){
-                for (int z = j+1;z <= n; z++)
-                    if (!vizinho(j,z)){
-                        break;
+            for (std::vector<int>::iterator it = vi.begin(); it != vi.end(); ++it){
+                for(std::vector<int>::iterator it2 = it+1; it2 != vi.end(); ++it2){
+                    if(!vizinho(*it,*it2)){
                         naoClique = true;
+                        break;
                     }
-                if(naoClique){
-                    break;
-                }
             }
+            if(naoClique){
+                    break;
+            }
+        }
             if(!naoClique){
                 return e;
             }
@@ -260,8 +255,8 @@ void Grafo::acharCliqueMaxima()
                 naoClique = false;
         } while (prev_permutation(v.begin(), v.end()));
     }
-    return 1;
-*/
+}
+
 bool Grafo::formaClique(vector<No>nosNaSolucao, No noCandidato)
 {
      for(vector <No>::iterator n = nosNaSolucao.begin(); n != nosNaSolucao.end() ; n++)
@@ -326,6 +321,8 @@ bool Grafo::grafoCompleto()
         return true;
     return false;
 }
+
+
 
 void Grafo::removeAresta(int id1,int id2)
 {
