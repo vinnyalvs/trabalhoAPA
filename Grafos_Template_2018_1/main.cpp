@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
     //grafo.acharCliqueMaxima();
     cout << grafo.cliqueMaximaForcaBruta() << endl;
-    grafo.reduzSat(9);
+    grafo.reduzSat(5);
 
     return 0;
 }

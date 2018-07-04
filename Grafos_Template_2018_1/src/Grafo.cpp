@@ -66,13 +66,40 @@ bool Grafo::noEstaNoGrafo(int index)
     return false;
 }
 
- void Grafo::writeFile(string path, int nC, int nL)
+ void Grafo::writeFile(string path, int nC, int nL, int k)
 {
     ofstream f(path.c_str());
+    int numClausulas = 0;
+    int i, j, n, z, x;
+    n = getOrdemGrafo();
     if(f.is_open())
     {
-        f << "p cnf " << nL << " " << nC;
-
+        f << "p cnf " << nL << " " << nC << endl;
+        for (i = 1; i <= k; i++)
+        {
+            for (j = 1; j <= n; j++)
+                f <<((i-1)*n)+j <<" ";
+            f << "0" << endl;
+            numClausulas++;
+        }
+        for (j = 1; j <= n; j++)
+            for (i = 1; i <= k; i++)
+                for (x = i+1; x <= k; x++)
+                    {
+                        f << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+j) << " 0" << endl;
+                        numClausulas++;
+                    }
+        for (j = 1; j <= n; j++)
+            for (z = j+1; z <= n; z++)
+                if (!vizinho(j,z))
+                    for (i = 1; i <= k; i++)
+                        for (x = i+1; x <= k; x++)
+                        {
+                            f << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+z) << " 0" << endl;
+                            numClausulas++;
+                            f << (-1)*(((x-1)*n)+j) << " " << (-1)*(((i-1)*n)+z) << " 0" << endl;
+                            numClausulas++;
+                        }
     }
     else
     {
@@ -406,6 +433,6 @@ void Grafo::reduzSat(int k)
                         numClausulas++;
                     }
     cout << numClausulas << " " << numLiterais;
-    writeFile("saida.txt", numClausulas, numLiterais);
+    writeFile("saida.txt", numClausulas, numLiterais, k);
 
 }
