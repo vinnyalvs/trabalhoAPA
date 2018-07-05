@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         cerr << "Couldn't open file!" << endl;
     }
     Grafo grafo = Grafo();
-    grafo.readFile("instancias/K5.txt");
+    grafo.readFile("instancias/K24.txt");
     //grafo.showInfo();
     //grafo.readFile2("instancias/brock200_2.txt");
 
