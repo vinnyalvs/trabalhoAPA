@@ -1,1 +1,35 @@
 # depslib dependency file v1.0
+1530748378 source:d:\trabalhos\trabalhoapa\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1530669889 d:\trabalhos\trabalhoapa\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	<locale>
+	<queue>
+	<algorithm>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+
+1530669889 d:\trabalhos\trabalhoapa\grafos_template_2018_1\headers\aresta.h
+
+1530669889 d:\trabalhos\trabalhoapa\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1530733229 d:\trabalhos\trabalhoapa\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1530669890 source:d:\trabalhos\trabalhoapa\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1530733229 source:d:\trabalhos\trabalhoapa\grafos_template_2018_1\src\grafo.cpp
+	"../headers/bibliotecas.h"
+	<vector>
+
+1530669890 source:d:\trabalhos\trabalhoapa\grafos_template_2018_1\src\no.cpp
+	"../headers/bibliotecas.h"
+
