@@ -69,3 +69,7 @@ N nos: 25
 Solução encontrada 19
 Tempo: 1.869 s
 
+K32_20
+N nos: 32
+Solução encontrada 22
+Tempo: 344.940 s
