@@ -33,10 +33,10 @@
 1530669890 source:d:\trabalhos\trabalhoapa\grafos_template_2018_1\src\no.cpp
 	"../headers/bibliotecas.h"
 
-1530752754 source:c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\main.cpp
+1530804928 source:c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\main.cpp
 	"headers/bibliotecas.h"
 
-1530751420 c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\headers\bibliotecas.h
+1530804539 c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\headers\bibliotecas.h
 	<vector>
 	<iostream>
 	<string>
@@ -44,7 +44,6 @@
 	<locale>
 	<queue>
 	<algorithm>
-	<ctime>
 	"Aresta.h"
 	"No.h"
 	"Grafo.h"
@@ -55,13 +54,13 @@
 	"bibliotecas.h"
 	"Aresta.h"
 
-1530728411 c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\headers\grafo.h
+1530808049 c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\headers\grafo.h
 	"bibliotecas.h"
 
 1528457942 source:c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\src\aresta.cpp
 	"../headers/bibliotecas.h"
 
-1530728601 source:c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\src\grafo.cpp
+1530808047 source:c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\src\grafo.cpp
 	"../headers/bibliotecas.h"
 	<vector>
 

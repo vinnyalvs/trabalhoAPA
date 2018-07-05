@@ -15,7 +15,7 @@ class Grafo{
         void removerNo(int id);
         void readFile(string path);
         void readFile2(string path);
-        void writeFile(string path, int nC, int nL, int k);
+        void writeFile(string path, int numClausulas, int numLiterais, int k);
         void showInfo();
         bool noEstaNoGrafo(int index);
         int getOrdemGrafo();
@@ -30,7 +30,7 @@ class Grafo{
         void acharCliqueMaxima();
         bool verificaSolucao(vector <No> nosNaSolucao);
         bool formaClique(vector<No>nosNaSolucao, No noCandidato);
-        void reduzSat(int k);
+        void reduzSat(int valorClique);
         int cliqueMaximaForcaBruta();
 };
 

@@ -1,42 +1,20 @@
 #include "headers/bibliotecas.h"
 
+/*
+Grupo: Eduardo Vieira
+       Matheus Brinati
+       Vinicius Alves
+*/
 
 
 int main(int argc, char *argv[])
 {
-    srand(time(0));
-    string path = "instancias/instancia.txt" ;
-    ofstream f(path.c_str());
-    int n = 20;
-    if(f.is_open()){
-        f << n;
-        f << "\n";
-        for(int i=1;i<=n;i++){
-            for (int j=1;j <= n;j++){
-                if(j!=i && i<j){
-                    f << i;
-                    f << " ";
-                    f << j;
-                    f << " ";
-                    f << 0;
-                    f << "\n";
-                }
-            }
-
-    }
-    } else {
-        cerr << "Couldn't open file!" << endl;
-    }
-    Grafo grafo = Grafo();
-    grafo.readFile("instancias/K32_30.txt");
-    //grafo.showInfo();
-    //grafo.readFile2("instancias/brock200_2.txt");
-
-    //grafo.acharCliqueMaxima();
-    cout << grafo.cliqueMaximaForcaBruta() << endl;
-    //grafo.reduzSat(5);
-
-    return 0;
+    Grafo grafo = Grafo();//instancia o gráfico.
+    grafo.readFile("instancias/K32_2.txt"); //Faz a leitura da instância.
+    cout << grafo.cliqueMaximaForcaBruta() << endl; //Exibe o valor da maior clique encontrada pelo algoritmo.
+    grafo.reduzSat(5); //Faz a redução para SAT com um valor K de clique. Além disso, exibe todas as cláusulas da CNF e inscreve no arquivo saida.txt as informações necessárias
+    //para o minisat verificar a satisfatibilidade.
+    return 0;//encerra o programa.
 }
 
 

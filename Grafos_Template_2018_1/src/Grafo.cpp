@@ -66,39 +66,34 @@ bool Grafo::noEstaNoGrafo(int index)
     return false;
 }
 
- void Grafo::writeFile(string path, int nC, int nL, int k)
+ void Grafo::writeFile(string path, int numClausulas, int numLiterais, int valorClique)
 {
     ofstream f(path.c_str());
-    int numClausulas = 0;
-    int i, j, n, z, x;
-    n = getOrdemGrafo();
+    int i, j, ordemGrafo, z, x;
+    ordemGrafo = getOrdemGrafo();
     if(f.is_open())
     {
-        f << "p cnf " << nL << " " << nC << endl;
-        for (i = 1; i <= k; i++)
+        f << "p cnf " << numLiterais << " " << numClausulas << endl;
+        for (i = 1; i <= valorClique; i++)
         {
-            for (j = 1; j <= n; j++)
-                f <<((i-1)*n)+j <<" ";
+            for (j = 1; j <= ordemGrafo; j++)
+                f <<((i-1)*ordemGrafo)+j <<" ";
             f << "0" << endl;
-            numClausulas++;
         }
-        for (j = 1; j <= n; j++)
-            for (i = 1; i <= k; i++)
-                for (x = i+1; x <= k; x++)
+        for (j = 1; j <= ordemGrafo; j++)
+            for (i = 1; i <= valorClique; i++)
+                for (x = i+1; x <= valorClique; x++)
                     {
-                        f << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+j) << " 0" << endl;
-                        numClausulas++;
+                        f << (-1)*(((i-1)*ordemGrafo)+j) << " " << (-1)*(((x-1)*ordemGrafo)+j) << " 0" << endl;
                     }
-        for (j = 1; j <= n; j++)
-            for (z = j+1; z <= n; z++)
+        for (j = 1; j <= ordemGrafo; j++)
+            for (z = j+1; z <= ordemGrafo; z++)
                 if (!vizinho(j,z))
-                    for (i = 1; i <= k; i++)
-                        for (x = i+1; x <= k; x++)
+                    for (i = 1; i <= valorClique; i++)
+                        for (x = i+1; x <= valorClique; x++)
                         {
-                            f << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+z) << " 0" << endl;
-                            numClausulas++;
-                            f << (-1)*(((x-1)*n)+j) << " " << (-1)*(((i-1)*n)+z) << " 0" << endl;
-                            numClausulas++;
+                            f << (-1)*(((i-1)*ordemGrafo)+j) << " " << (-1)*(((x-1)*ordemGrafo)+z) << " 0" << endl;
+                            f << (-1)*(((x-1)*ordemGrafo)+j) << " " << (-1)*(((i-1)*ordemGrafo)+z) << " 0" << endl;
                         }
     }
     else
@@ -377,62 +372,39 @@ bool Grafo::vizinho(int id1, int id2)
 
 
 }
-/*
-Reduzir para sat:
-k = numero de vertices da clique
-n = numero de nos
-for i = 1 ate k
-    cria clausula
-    for j = 1 ate n
-        cria um literal Vij
-    fecha clausula
-for j = 1 ate n
-    for i = 1 ate k
-        for x = i+1 ate k
-            cria uma clausula com dois literais ~Vij e ~Vxj
-            fecha clausula
-for j = 1 ate n
-    for z = j ate n
-        if z nao for vizinho de j
-            for i = 1 ate k
-                for x = i+1 ate k
-                cria uma clausula com dois literais ~Vij e ~Vxz
-                fecha clausula
- esse seria as tres formas de gerar clausula agora so temos que decidir qual Sat solver a gente vai usar para saber que tipo de entrada ele aceita para podermos caracterizar mais as partes de criar clausula e literal
 
-*/
-void Grafo::reduzSat(int k)
+void Grafo::reduzSat(int valorClique)
 {
-    int n = getOrdemGrafo();
+    int ordemGrafo = getOrdemGrafo();
     int i,j,x,z,numLiterais;
     int numClausulas = 0;
-    numLiterais = n*k;
-    for (i = 1; i <= k; i++)
+    numLiterais = ordemGrafo*valorClique;
+    for (i = 1; i <= valorClique; i++)
     {
-        for (j = 1; j <= n; j++)
-            cout <<((i-1)*n)+j <<" ";
+        for (j = 1; j <= ordemGrafo; j++)
+            cout <<((i-1)*ordemGrafo)+j <<" ";
         cout << "0" << endl;
         numClausulas++;
     }
-    for (j = 1; j <= n; j++)
-        for (i = 1; i <= k; i++)
-            for (x = i+1; x <= k; x++)
+    for (j = 1; j <= ordemGrafo; j++)
+        for (i = 1; i <= valorClique; i++)
+            for (x = i+1; x <= valorClique; x++)
             {
-                cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+j) << " 0" << endl;
+                cout << (-1)*(((i-1)*ordemGrafo)+j) << " " << (-1)*(((x-1)*ordemGrafo)+j) << " 0" << endl;
                 numClausulas++;
             }
-    for (j = 1; j <= n; j++)
-        for (z = j+1; z <= n; z++)
+    for (j = 1; j <= ordemGrafo; j++)
+        for (z = j+1; z <= ordemGrafo; z++)
             if (!vizinho(j,z))
-                for (i = 1; i <= k; i++)
-                    for (x = i+1; x <= k; x++)
+                for (i = 1; i <= valorClique; i++)
+                    for (x = i+1; x <= valorClique; x++)
                     {
-                        cout << (-1)*(((i-1)*n)+j) << " " << (-1)*(((x-1)*n)+z) << " 0" << endl;
+                        cout << (-1)*(((i-1)*ordemGrafo)+j) << " " << (-1)*(((x-1)*ordemGrafo)+z) << " 0" << endl;
                         numClausulas++;
-                        cout << (-1)*(((x-1)*n)+j) << " " << (-1)*(((i-1)*n)+z) << " 0" << endl;
+                        cout << (-1)*(((x-1)*ordemGrafo)+j) << " " << (-1)*(((i-1)*ordemGrafo)+z) << " 0" << endl;
                         numClausulas++;
                     }
     cout << numClausulas << " " << numLiterais;
-    writeFile("saida.txt", numClausulas, numLiterais, k);
+    writeFile("saida.txt", numClausulas, numLiterais, valorClique);
 
 }
