@@ -1,5 +1,11 @@
 #include "../headers/bibliotecas.h"
 
+/*
+Grupo: Eduardo Vieira 201665554AC
+       Matheus Brinati 201665564C
+       Vinicius Alves 201665558AC
+*/
+
 Aresta::Aresta(int id, bool arc,float pesoA)
 {
     iD_No = id;

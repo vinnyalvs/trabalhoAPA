@@ -67,3 +67,37 @@
 1530721766 source:c:\users\mthal\desktop\matheus\quinto período\apa\trabalhoapa\grafos_template_2018_1\src\no.cpp
 	"../headers/bibliotecas.h"
 
+1530808848 source:c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\main.cpp
+	"headers/bibliotecas.h"
+
+1530808210 c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\headers\bibliotecas.h
+	<vector>
+	<iostream>
+	<string>
+	<fstream>
+	<locale>
+	<queue>
+	<algorithm>
+	"Aresta.h"
+	"No.h"
+	"Grafo.h"
+
+1529343371 c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\headers\aresta.h
+
+1529347778 c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\headers\no.h
+	"bibliotecas.h"
+	"Aresta.h"
+
+1530808834 c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\headers\grafo.h
+	"bibliotecas.h"
+
+1530808505 source:c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\src\aresta.cpp
+	"../headers/bibliotecas.h"
+
+1530808516 source:c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\src\no.cpp
+	"../headers/bibliotecas.h"
+
+1530808636 source:c:\users\vinic\documents\github\trabalhoapa\grafos_template_2018_1\src\grafo.cpp
+	"../headers/bibliotecas.h"
+	<vector>
+
